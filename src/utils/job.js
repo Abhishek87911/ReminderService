@@ -10,7 +10,7 @@ const sender = require('../config/email-config');
  */
 
 const setupJobs = () => {
-    cron.schedule('*/15 * * * *', async () => {
+    cron.schedule('*/5 * * * *', async () => {
         const response = await emailService.fetchPendingEmail();
         response.forEach((email) => {
            sender.sendMail({
